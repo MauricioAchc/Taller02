@@ -88,6 +88,7 @@ public final class Sistema {
         }
 
         // TODO: buscar el socio dado su numero.
+
         // busco el socio.
         Socio socio = this.buscarSocio(numeroDeSocio);
 
@@ -97,18 +98,20 @@ public final class Sistema {
         }
 
         // TODO: verificar su clave.
-        if(contrasenia.equals("john123")){
 
+        // si la clave coincide
+        if(contrasenia.equals("john123")){
             StdOut.println("contraseña correcta");
 
+        // si la clave no coincide
         }else{
             throw new IllegalArgumentException("la contraseña no coincide.");
-
         }
-
 
         // TODO: asignar al atributo socio el socio encontrado.
 
+        // atributo socio al socio encontrado
+        this.socio = socio;
     }
 
     /**
@@ -147,7 +150,6 @@ public final class Sistema {
 
     }
 
-
     /**
      * Obtiene un String que representa el listado completo de libros disponibles.
      *
@@ -171,7 +173,7 @@ public final class Sistema {
      * Metodo que busca un libro en los libros disponibles.
      *
      * @param isbn a buscar.
-     * @return el libro o null si no fue encontrado.l
+     * @return el libro o null si no fue encontrado.
      */
     private Libro buscarLibro(final String isbn) {
         // recorro el arreglo de libros.
@@ -185,6 +187,12 @@ public final class Sistema {
         return null;
     }
 
+    /**
+     * Metodo que busca un socio en los socios disponibles.
+     *
+     * @param numeroDeSocio a buscar.
+     * @return el socio o null si no fue encontrado.
+     */
     private Socio buscarSocio(final int numeroDeSocio){
         // recorro el arreglo de socios.
         for(Socio socio : this.socios){
