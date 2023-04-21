@@ -8,6 +8,7 @@ import cl.ucn.disc.pa.bibliotech.model.Libro;
 import cl.ucn.disc.pa.bibliotech.model.Socio;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import edu.princeton.cs.stdlib.StdOut;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -96,6 +97,15 @@ public final class Sistema {
         }
 
         // TODO: verificar su clave.
+        if(contrasenia.equals("john123")){
+
+            StdOut.println("contraseña correcta");
+
+        }else{
+            throw new IllegalArgumentException("la contraseña no coincide.");
+
+        }
+
 
         // TODO: asignar al atributo socio el socio encontrado.
 
