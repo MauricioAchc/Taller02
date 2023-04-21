@@ -60,9 +60,15 @@ public final class Socio {
     public Socio(String nombre, String apellido, String correoElectronico, int numeroDeSocio, String contrasenia) {
 
         // TODO: agregar validacion
+        if (nombre == null || nombre.length() == 0) {
+            throw new IllegalArgumentException("Nombre no valido!");
+        }
         this.nombre = nombre;
 
         // TODO: agregar validacion
+        if (apellido == null || apellido.length() == 0) {
+            throw new IllegalArgumentException("Apellido no valido!");
+        }
         this.apellido = apellido;
 
         // metodo estatico para validacion de email.
@@ -70,9 +76,15 @@ public final class Socio {
         this.correoElectronico = correoElectronico;
 
         // TODO: agregar validacion
+        if (numeroDeSocio == 0) {
+            throw new IllegalArgumentException("Número de socio no valido!");
+        }
         this.numeroDeSocio = numeroDeSocio;
 
         // TODO: agregar validacion
+        if (contrasenia == null || contrasenia.length() == 0) {
+            throw new IllegalArgumentException("Contraseña no valida!");
+        }
         this.contrasenia = contrasenia;
     }
 

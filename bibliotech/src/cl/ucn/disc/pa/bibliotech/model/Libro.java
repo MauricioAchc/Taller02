@@ -32,6 +32,7 @@ public final class Libro {
     private String categoria;
 
     // TODO: Agregar la calificacion.
+    private boolean calificacion;
 
     /**
      * The Constructor.
@@ -43,18 +44,27 @@ public final class Libro {
      */
     public Libro(final String isbn, final String titulo, final String autor, final String categoria) {
         // TODO: agregar validacion de ISBN
+        if (isbn == null || isbn.length() == 0) {
+            throw new IllegalArgumentException("Isbn no valido!");
+        }
         this.isbn = isbn;
 
         // validacion del titulo
         if (titulo == null || titulo.length() == 0) {
-            throw new IllegalArgumentException("Titulo no valido!");
+            throw new IllegalArgumentException("Título no valido!");
         }
         this.titulo = titulo;
 
         // TODO: Agregar validacion
+        if (autor == null || autor.length() == 0) {
+            throw new IllegalArgumentException("Autor no valido!");
+        }
         this.autor = autor;
 
         // TODO: Agregar validacion
+        if (categoria == null || categoria.length() == 0) {
+            throw new IllegalArgumentException("Categoría no valida!");
+        }
         this.categoria = categoria;
     }
 
