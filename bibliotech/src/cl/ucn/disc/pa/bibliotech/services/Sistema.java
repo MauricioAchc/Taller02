@@ -87,6 +87,7 @@ public final class Sistema {
         }
 
         // TODO: buscar el socio dado su numero.
+        this.socio = buscarSocio(numeroDeSocio);
 
         // TODO: verificar su clave.
 
@@ -130,6 +131,7 @@ public final class Sistema {
 
     }
 
+
     /**
      * Obtiene un String que representa el listado completo de libros disponibles.
      *
@@ -161,6 +163,18 @@ public final class Sistema {
             // si lo encontre, retorno el libro.
             if (libro.getIsbn().equals(isbn)) {
                 return libro;
+            }
+        }
+        // no lo encontre, retorno null.
+        return null;
+    }
+
+    private Socio buscarSocio(final int numeroDeSocio){
+        // recorro el arreglo de socios.
+        for(Socio socio : this.socios){
+            // si lo encontre, retorno el socio.
+            if(socio.getNumeroDeSocio() == numeroDeSocio){
+                return socio;
             }
         }
         // no lo encontre, retorno null.
