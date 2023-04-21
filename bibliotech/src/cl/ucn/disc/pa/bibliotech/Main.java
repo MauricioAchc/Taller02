@@ -4,6 +4,7 @@
 
 package cl.ucn.disc.pa.bibliotech;
 
+import cl.ucn.disc.pa.bibliotech.model.Socio;
 import cl.ucn.disc.pa.bibliotech.services.Sistema;
 import edu.princeton.cs.stdlib.StdIn;
 import edu.princeton.cs.stdlib.StdOut;

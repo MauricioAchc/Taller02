@@ -87,7 +87,13 @@ public final class Sistema {
         }
 
         // TODO: buscar el socio dado su numero.
-        this.socio = buscarSocio(numeroDeSocio);
+        // busco el socio.
+        Socio socio = this.buscarSocio(numeroDeSocio);
+
+        // si no lo encontre, lo informo.
+        if (socio == null) {
+            throw new IllegalArgumentException("El número de socio no coincide.");
+        }
 
         // TODO: verificar su clave.
 

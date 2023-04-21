@@ -76,7 +76,7 @@ public final class Socio {
         this.correoElectronico = correoElectronico;
 
         // TODO: agregar validacion
-        if (numeroDeSocio == 0) {
+        if (numeroDeSocio != 1) {
             throw new IllegalArgumentException("Número de socio no valido!");
         }
         this.numeroDeSocio = numeroDeSocio;
