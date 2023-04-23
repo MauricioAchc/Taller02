@@ -63,7 +63,7 @@ public final class Main {
         int numeroSocio = StdIn.readInt();
         StdIn.readLine();
 
-        StdOut.print("Ingrese su contrasenia: ");
+        StdOut.print("Ingrese su contraseña: ");
         String contrasenia = StdIn.readLine();
 
         // intento el inicio de session
@@ -145,9 +145,20 @@ public final class Main {
 
     private static void cambiarContrasenia(Sistema sistema) {
         // TODO: implementar este metodo
+
+        StdOut.print("Ingrese su nueva contraseña: ");
+        String contrasenia = StdIn.readLine();
+
+        sistema.cambiarClave(contrasenia);
+
     }
 
     private static void editarCorreo(Sistema sistema) {
         // TODO: implementar este metodo
+
+        StdOut.println("Edite su correo electrónico: ");
+        String correoElectronico = StdIn.readLine();
+
+        sistema.editarCorreo(correoElectronico);
     }
 }

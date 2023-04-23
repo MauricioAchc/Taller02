@@ -144,4 +144,11 @@ public final class Socio {
         Utils.append(this.librosEnPrestamo, libro);
     }
 
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
 }

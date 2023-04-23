@@ -82,7 +82,7 @@ public final class Sistema {
      */
     public void iniciarSession(final int numeroDeSocio, final String contrasenia) {
 
-        // el numero de socio siempre es positivo.
+        // el número de socio siempre es positivo.
         if (numeroDeSocio <= 0) {
             throw new IllegalArgumentException("El numero de socio no es valido!");
         }
@@ -94,14 +94,14 @@ public final class Sistema {
 
         // si no lo encontre, lo informo.
         if (socio == null) {
-            throw new IllegalArgumentException("El número de socio no coincide.");
+            throw new IllegalArgumentException("El socio no coincide.");
         }
 
         // TODO: verificar su clave.
 
         // si la clave coincide
-        if(contrasenia.equals("john123")){
-            StdOut.println("contraseña correcta");
+        if(socio.getContrasenia().equals(contrasenia)){
+            StdOut.println("La contraseña coincide.");
 
         // si la clave no coincide
         }else{
@@ -145,7 +145,9 @@ public final class Sistema {
 
         // TODO: eliminar el libro de los disponibles
 
-        // se actualiza la informacion de los archivos
+
+
+        // se actualiza la información de los archivos
         this.guardarInformacion();
 
     }
@@ -243,5 +245,15 @@ public final class Sistema {
 
         return "Nombre: " + this.socio.getNombreCompleto() + "\n"
                 + "Correo Electronico: " + this.socio.getCorreoElectronico();
+    }
+
+    public void cambiarClave(final String contrasenia){
+        socio.setContrasenia(contrasenia);
+        StdOut.println("Su contraseña fue cambiada con éxito");
+    }
+
+    public void editarCorreo(final String correoElectronico){
+        socio.setCorreoElectronico(correoElectronico);
+        StdOut.println("Su correo electrónico fue editado con éxito");
     }
 }
