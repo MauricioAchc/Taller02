@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * Clase que reune los metodos utilitarios.
+ * Clase que reúne los métodos utilitarios.
  *
  * @author Diego Urrutia-Astorga.
  */
@@ -48,14 +48,14 @@ public final class Utils {
     }
 
     /**
-     * Valida un correo electronico, en caso de no ser valido se lanza una Exception.
+     * Valida un correo electrónico, en caso de no ser válido se lanza una Exception.
      *
      * @param email a validar.
      */
     public static void validarEmail(final String email) {
-        // el correo debe ser estructuralmente valido
+        // el correo debe ser estructuralmente válido
         if (!EMAIL_PATTERN.matcher(email).matches()) {
-            throw new IllegalArgumentException("Correo Electronico no valido: " + email);
+            throw new IllegalArgumentException("Correo Electrónico no valido: " + email);
         }
     }
 }

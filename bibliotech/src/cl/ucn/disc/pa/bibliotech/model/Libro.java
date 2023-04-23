@@ -27,12 +27,12 @@ public final class Libro {
     private String autor;
 
     /**
-     * The Categoria
+     * The Categoría
      */
     private String categoria;
 
-    // TODO: Agregar la calificacion.
-    private boolean calificacion;
+    // TODO: Agregar la calificación.
+    private boolean calificación;
 
 
     /**
@@ -44,25 +44,26 @@ public final class Libro {
      * @param categoria del libro.
      */
     public Libro(final String isbn, final String titulo, final String autor, final String categoria) {
-        // TODO: agregar validacion de ISBN
+
+        // TODO: agregar validación de ISBN
         if (isbn == null || isbn.length() == 0) {
             throw new IllegalArgumentException("Isbn no valido!");
         }
         this.isbn = isbn;
 
-        // validacion del titulo
+        // validación del título
         if (titulo == null || titulo.length() == 0) {
             throw new IllegalArgumentException("Título no valido!");
         }
         this.titulo = titulo;
 
-        // TODO: Agregar validacion
+        // TODO: Agregar validación
         if (autor == null || autor.length() == 0) {
             throw new IllegalArgumentException("Autor no valido!");
         }
         this.autor = autor;
 
-        // TODO: Agregar validacion
+        // TODO: Agregar validación
         if (categoria == null || categoria.length() == 0) {
             throw new IllegalArgumentException("Categoría no valida!");
         }
@@ -91,7 +92,7 @@ public final class Libro {
     }
 
     /**
-     * @return the categoria.
+     * @return the categoría.
      */
     public String getCategoria() {
         return this.categoria;

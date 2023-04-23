@@ -14,7 +14,7 @@ import cl.ucn.disc.pa.bibliotech.services.Utils;
 public final class Socio {
 
     /**
-     * Numero maximo de libros que puede tener el Socio.
+     * Número máximo de libros que puede tener el Socio.
      */
     private static final int NUMERO_LIBROS_MAXIMO = 5;
 
@@ -39,12 +39,12 @@ public final class Socio {
     private int numeroDeSocio;
 
     /**
-     * Contrasenia del socio.
+     * Contraseña del socio.
      */
     private String contrasenia;
 
     /**
-     * Libros que el Socio tiene en prestamo (maximo 10).
+     * Libros que el Socio tiene en préstamo (máximo 10).
      */
     private Libro[] librosEnPrestamo = new Libro[0];
 
@@ -59,29 +59,29 @@ public final class Socio {
      */
     public Socio(String nombre, String apellido, String correoElectronico, int numeroDeSocio, String contrasenia) {
 
-        // TODO: agregar validacion
+        // TODO: agregar validación
         if (nombre == null || nombre.length() == 0) {
             throw new IllegalArgumentException("Nombre no valido!");
         }
         this.nombre = nombre;
 
-        // TODO: agregar validacion
+        // TODO: agregar validación
         if (apellido == null || apellido.length() == 0) {
             throw new IllegalArgumentException("Apellido no valido!");
         }
         this.apellido = apellido;
 
-        // metodo estatico para validacion de email.
+        // método estático para validación de email.
         Utils.validarEmail(correoElectronico);
         this.correoElectronico = correoElectronico;
 
-        // TODO: agregar validacion
+        // TODO: agregar validación
         if (numeroDeSocio != 1) {
             throw new IllegalArgumentException("Número de socio no valido!");
         }
         this.numeroDeSocio = numeroDeSocio;
 
-        // TODO: agregar validacion
+        // TODO: agregar validación
         if (contrasenia == null || contrasenia.length() == 0) {
             throw new IllegalArgumentException("Contraseña no valida!");
         }
@@ -124,14 +124,14 @@ public final class Socio {
     }
 
     /**
-     * @return la contrasenia del Socio.
+     * @return la contraseña del Socio.
      */
     public String getContrasenia() {
         return this.contrasenia;
     }
 
     /**
-     * Agrega un libro en prestamo al Socio.
+     * Agrega un libro en préstamo al Socio.
      *
      * @param libro a agregar.
      */
@@ -144,10 +144,20 @@ public final class Socio {
         Utils.append(this.librosEnPrestamo, libro);
     }
 
+    /**
+     * Cambio la contraseña del Socio.
+     *
+     * @param contrasenia nueva contraseña.
+     */
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
 
+    /**
+     * Cambio el correo electrónico del Socio.
+     *
+     * @param correoElectronico nuevo correo electrónico.
+     */
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }

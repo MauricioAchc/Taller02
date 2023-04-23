@@ -68,14 +68,14 @@ public final class Sistema {
             this.libros = Utils.append(this.libros, new Libro("1491910771", "Effective Java", "Joshua Bloch", "Programming Languages"));
 
         } finally {
-            // guardo la informacion.
+            // guardo la información.
             this.guardarInformacion();
         }
 
     }
 
     /**
-     * Activa (inicia sesion) de un socio en el sistema.
+     * Activa (inicia sesión) de un socio en el sistema.
      *
      * @param numeroDeSocio a utilizar.
      * @param contrasenia   a validar.
@@ -122,7 +122,7 @@ public final class Sistema {
     }
 
     /**
-     * Metodo que mueve un libro de los disponibles y lo ingresa a un Socio.
+     * Método que mueve un libro de los disponibles y lo ingresa a un Socio.
      *
      * @param isbn del libro a prestar.
      */
@@ -155,7 +155,7 @@ public final class Sistema {
     /**
      * Obtiene un String que representa el listado completo de libros disponibles.
      *
-     * @return the String con la informacion de los libros disponibles.
+     * @return the String con la información de los libros disponibles.
      */
     public String obtegerCatalogoLibros() {
 
@@ -164,7 +164,7 @@ public final class Sistema {
             sb.append("Titulo    : ").append(libro.getTitulo()).append("\n");
             sb.append("Autor     : ").append(libro.getAutor()).append("\n");
             sb.append("ISBN      : ").append(libro.getIsbn()).append("\n");
-            sb.append("Categoria : ").append(libro.getCategoria()).append("\n");
+            sb.append("Categoría : ").append(libro.getCategoria()).append("\n");
             sb.append("\n");
         }
 
@@ -172,7 +172,7 @@ public final class Sistema {
     }
 
     /**
-     * Metodo que busca un libro en los libros disponibles.
+     * Método que busca un libro en los libros disponibles.
      *
      * @param isbn a buscar.
      * @return el libro o null si no fue encontrado.
@@ -190,7 +190,7 @@ public final class Sistema {
     }
 
     /**
-     * Metodo que busca un socio en los socios disponibles.
+     * Método que busca un socio en los socios disponibles.
      *
      * @param numeroDeSocio a buscar.
      * @return el socio o null si no fue encontrado.
@@ -222,7 +222,7 @@ public final class Sistema {
     /**
      * Guarda los arreglos libros y socios en los archivos libros.json y socios.json.
      *
-     * @throws IOException en caso de algun error.
+     * @throws IOException en caso de algún error.
      */
     private void guardarInformacion() throws IOException {
 
@@ -238,21 +238,38 @@ public final class Sistema {
 
     }
 
+    /**
+     * Obtiene los atos del Socio logeado.
+     */
     public String obtenerDatosSocioLogeado() {
         if (this.socio == null) {
             throw new IllegalArgumentException("No hay un Socio logeado");
         }
 
         return "Nombre: " + this.socio.getNombreCompleto() + "\n"
-                + "Correo Electronico: " + this.socio.getCorreoElectronico();
+                + "Correo Electrónico: " + this.socio.getCorreoElectronico();
     }
 
+    /**
+     * Método que cambia la contraseña del Socio.
+     *
+     * @param contrasenia del Socio a cambiar.
+     */
     public void cambiarClave(final String contrasenia){
+
+        // cambio la contraseña el socio.
         socio.setContrasenia(contrasenia);
         StdOut.println("Su contraseña fue cambiada con éxito");
     }
 
+    /**
+     * Método que edita el correo electrónico del Socio.
+     *
+     * @param correoElectronico del Socio a editar.
+     */
     public void editarCorreo(final String correoElectronico){
+
+        //cambio el correo electrónico del socio.
         socio.setCorreoElectronico(correoElectronico);
         StdOut.println("Su correo electrónico fue editado con éxito");
     }
